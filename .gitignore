@@ -1,0 +1,6 @@
+# C FILE 
+lex.yy.c 
+
+# Executable Files
+*.out
+executables/
