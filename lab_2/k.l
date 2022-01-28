@@ -1,19 +1,20 @@
 %{
     #include<stdio.h>
     int numChars = 0;
-    int numSpaces = 0;
-    int numTabs = 0;
+    int whiteSpaces = 0;
+    int tabs = 0;
 %}
 
 %%
-[a-zA-z]* {numChars++; return 0;}
+[a-zA-Z] {numChars++;}
+" " {whiteSpaces++;}
 \n {return 0;}
 %%
 
-int main(){
+void main(){
     yyin = fopen("input.txt", "r");
-    printf("Total characters: %d\n", numChars);
-    printf("Total white spaces: %d\n", numSpaces);
-    printf("Total tabs: %d", numTabs);
     yylex();
+    printf("Total characters: %d\n", numChars);
+    printf("Total whitespaces: %d\n", whiteSpaces);
+    printf("Total tabs: %d", tabs);
 }
