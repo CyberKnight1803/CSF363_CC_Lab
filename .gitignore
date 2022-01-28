@@ -4,3 +4,7 @@ lex.yy.c
 # Executable Files
 *.out
 executables/
+
+# I/O Files
+input.txt
+output.txt
