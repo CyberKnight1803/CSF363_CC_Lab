@@ -8,3 +8,4 @@ executables/
 # I/O Files
 input.txt
 output.txt
+io/
