@@ -11,5 +11,11 @@ fi
 
 # RUN
 lex $filePath
-cc lex.yy.c -ll -o "executables/$FILE_NAME.out"
-./executables/$FILE_NAME.out
+cc lex.yy.c -ll -lm -o "executables/$FILE_NAME.out"
+
+if [ $# -ne 1 ]
+then 
+    ./executables/$FILE_NAME.out ${@:2}
+else 
+    ./executables/$FILE_NAME.out 
+fi 
